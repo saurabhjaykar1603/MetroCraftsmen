@@ -8,7 +8,7 @@ function Navbar() {
         <div>
             <div>
                 <nav class="navbar navbar-expand-lg navbar-light nav-bg pt-3 bg-secondary-subtle">
-                    <div class="container-fluid">
+                    <div class="container-fluid p-1">
                         <Link to="/" class="navbar-brand fs-3 ms-4" href="#">MetroCraftsmen</Link>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
