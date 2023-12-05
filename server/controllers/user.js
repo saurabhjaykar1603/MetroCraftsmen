@@ -27,6 +27,24 @@ const apiUserSignup = async (req, res) => {
     }
   }
 
- 
+  const apiUserLogin = async (req ,res)=>{
+    const {email, password} = req.body;
+  
+    const savedata = await User.findOne({email,password});
+    try{
+      const saved = await savedata.save();
+      return res.json({
+        success:true,
+        data:saved,
+        message:'Login Successfully'
+      })
+    }
+    catch(e){
+      return res.json({
+        success:false,
+        message:e.message
+      })
+    }
+  }
 
-  export {apiUserSignup ,}
+  export {apiUserSignup , apiUserLogin}
