@@ -1,14 +1,14 @@
 import React from 'react'
-import "./About.css"
+import "./Plumber.css"
 import Navbar from '../../components/Navbar/Navbar'
 
-function About() {
+function Plumber() {
   return (
     <div>
-      <Navbar />
-      <h1>About</h1>
+      <Navbar/>
+      <h1>Plumber</h1>
     </div>
   )
 }
 
-export default About
+export default Plumber
