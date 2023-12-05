@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import {apiUserSignup } from './controllers/user.js';
 dotenv.config();
 
 const app = express();
@@ -15,7 +16,11 @@ const connDB = async () => {
 
 // api controllers goes bellow
 
-const PORT = process.env.PORT || 8080;
+//-------Api Signup ----------
+app.post('/api/signup',apiUserSignup);
+
+
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
   console.log(`server listening on ${PORT}`);
