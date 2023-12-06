@@ -3,10 +3,10 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 
 
-import {postAppoinments} from "./controllers/Appointment.js";
+import {postAppoinments,getAppointmentById} from "./controllers/Appointment.js";
 import {postCarpenter,getCarpenter} from "./controllers/Carpenter.js";
 import {postElectrician,getElectrician} from "./controllers/Electrician.js";
-import {postPlumber} from "./controllers/Plumber.js";
+import {postPlumber,getPlumber} from "./controllers/Plumber.js";
 import {apiUserSignup , apiUserLogin} from './controllers/user.js';
 
 dotenv.config();
@@ -33,6 +33,10 @@ app.get('/api/v1/healts', async (req,res)=> {
 // POST Appointment 
 app.post('/api/v1/appointments', postAppoinments);
 
+// GET AppointmentByID API
+
+app.get('/api/v1/appointments/:id',getAppointmentById)
+
 // POST carpenter API
 app.post('/api/v1/carpenters',postCarpenter);
 
@@ -50,6 +54,9 @@ app.get('/api/v1/electricians',getElectrician);
 // POST plumber API
 
 app.post('/api/v1/plumbers',postPlumber);
+
+// GET plumber API
+app.get('/api/v1/plumbers',getPlumber);
 
 //-------Api Signup ----------
 app.post('/api/signup',apiUserSignup);
