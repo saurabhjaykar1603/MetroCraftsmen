@@ -26,4 +26,21 @@ const postPlumber = async (req,res) => {
     }
 }
 
-export {postPlumber};
+const getPlumber = async (req,res) => {
+    try{
+        const findPlumber = await Plumber.find();
+        res.json({
+            success:true,
+            data:findPlumber,
+            message:" get  plumber successfully !"
+        });
+    }
+    catch(err){
+        res.json({
+            success:false,
+            message:err.message
+        });
+    }
+} 
+
+export {postPlumber,getPlumber};
