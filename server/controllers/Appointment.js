@@ -1,4 +1,4 @@
-import Appointment from "../models/Appointment";
+import Appointment from "../models/Appointment.js";
 
 const postAppoinments = async (req,res) => {
     const { user, userLocation,serviceProvider,serviceProviderContact, appointmentDate} =req.body;
