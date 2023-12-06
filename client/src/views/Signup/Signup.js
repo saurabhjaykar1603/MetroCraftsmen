@@ -1,7 +1,9 @@
 
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import axios from 'axios'
 import "./Signup.css";
+import Navbar from "./../../components/Navbar/Navbar.js";
+import { Link } from "react-router-dom";
 
 function Signup() {
   const [name, setName] = useState('');
@@ -43,28 +45,38 @@ function Signup() {
 
   }
 
-
+  useEffect(() => {
+    const storageUser = JSON.parse(localStorage.getItem("user") || "{}");
+    if (storageUser?.email) {
+      alert("You are already logged in!");
+      window.location.href = "/";
+    }
+  }, [])
+  
   return (
-    <div className="signup-container">
-      <h1 className="text-center-signup">Signup</h1>
-      <h3 className="text-center-signup heading">Create a free account with your email .</h3>
-      <div className="input-container-signup">
-        <input type="text" placeholder="Name" value={name} onChange={(e) => { setName(e.target.value) }} className="font input-signup" />
-        <input type="email" placeholder="Email" value={email} onChange={(e) => { setEmail(e.target.value) }} className="font input-signup" />
-        <input type="password" placeholder="Password" value={password} onChange={(e) => { setPassword(e.target.value) }} className="font input-signup" />
-        <input type="text" placeholder="Address" value={address} onChange={(e) => { setAddress(e.target.value) }} className="font input-signup" />
+    <>
+      <Navbar />
+      <div className="signup-container">
+        <h1 className="text-center-signup">Signup</h1>
+        <h3 className="text-center-signup heading">Create a free account with your email .</h3>
+        <div className="input-container-signup">
+          <input type="text" placeholder="Name" value={name} onChange={(e) => { setName(e.target.value) }} className="font input-signup" />
+          <input type="email" placeholder="Email" value={email} onChange={(e) => { setEmail(e.target.value) }} className="font input-signup" />
+          <input type="password" placeholder="Password" value={password} onChange={(e) => { setPassword(e.target.value) }} className="font input-signup" />
+          <input type="text" placeholder="Address" value={address} onChange={(e) => { setAddress(e.target.value) }} className="font input-signup" />
 
-      </div>
-      <div className="radio-container">
-        <p className="font " ><span className="radio-button">male</span>
-        <input type="radio" name="gender" onChange={(e) => { setGender(e.target.value) }} value='male' checked='male' />    </p>
-        <p className="font"><span className="radio-button">female</span>
-        <input type="radio" name="gender" onChange={(e) => { setGender(e.target.value) }} value='female' /></p>
-      </div>
+        </div>
+        <div className="radio-container">
+          <p className="font " ><span className="radio-button">male</span>
+            <input type="radio" name="gender" onChange={(e) => { setGender(e.target.value) }} value='male' checked='male' />    </p>
+          <p className="font"><span className="radio-button">female</span>
+            <input type="radio" name="gender" onChange={(e) => { setGender(e.target.value) }} value='female' /></p>
+        </div>
 
-      <button type="button" className="button-signup" onClick={signupButton}>Signup</button>
-      <p className="description-con">Have an account ? <span className="signup-log-con">Log in</span></p>
-    </div>
+        <button type="button" className="button-signup" onClick={signupButton}>Signup</button>
+        <Link to="/login" className="description-con">Already have an account ? </Link>
+      </div>
+    </>
   );
 }
 
