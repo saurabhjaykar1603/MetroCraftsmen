@@ -7,6 +7,8 @@ import Home from "./views/Home/Home.js";
 import About from "./views/About/About.js";
 import Login from "./views/Login/Login.js"
 import Signup from "./views/Signup/Signup.js"
+import Addappointment from "./views/Addappointment/Addappointment.js"
+import Myappointment from "./views/Myappointment/Myappointment.js"
 
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
   {
     path: "/electrician",
     element: <Electrician />,
+  },
+  {
+    path: "/addappointment",
+    element: <Addappointment />,
+  },
+  {
+    path: "/myappointment",
+    element: <Myappointment />,
   },
   {
     path: "/plumber",

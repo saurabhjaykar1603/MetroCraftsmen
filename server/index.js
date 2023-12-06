@@ -2,10 +2,12 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 
+
 import {postAppoinments} from "./controllers/Appointment.js";
 import {postCarpenter,getCarpenter} from "./controllers/Carpenter.js";
 import {postElectrician,getElectrician} from "./controllers/Electrician.js";
 import {postPlumber} from "./controllers/Plumber.js";
+import {apiUserSignup , apiUserLogin} from './controllers/user.js';
 
 dotenv.config();
 
@@ -49,7 +51,13 @@ app.get('/api/v1/electricians',getElectrician);
 
 app.post('/api/v1/plumbers',postPlumber);
 
-const PORT = process.env.PORT || 8080;
+//-------Api Signup ----------
+app.post('/api/signup',apiUserSignup);
+
+//---------Api Login ---------
+app.post('/api/login', apiUserLogin);
+
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
   console.log(`server listening on ${PORT}`);
