@@ -27,5 +27,23 @@ const postElectrician = async (req, res) => {
         });
     }
 }
+const getElectrician = async (req,res) => {
+    try{
+        const findElectrician = await Electrician.find();
+        res.json({
+            success:true,
+            data:findElectrician,
+            message:"get Electrician successfully"
+        });
+    }
+    catch(err){
+        res.json({
+            success:false,
+            message:err.message
+        });
+    }
 
-export {postElectrician};
+}
+
+
+export {postElectrician,getElectrician};

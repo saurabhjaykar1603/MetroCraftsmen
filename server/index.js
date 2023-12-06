@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 
 import {postAppoinments} from "./controllers/Appointment.js";
 import {postCarpenter,getCarpenter} from "./controllers/Carpenter.js";
-import {postElectrician} from "./controllers/Electrician.js";
+import {postElectrician,getElectrician} from "./controllers/Electrician.js";
 dotenv.config();
 
 const app = express();
@@ -38,6 +38,10 @@ app.get('/api/v1/carpenters',getCarpenter);
 // POST electrician API
 
 app.post('/api/v1/electricians',postElectrician);
+
+// GET  electrician API
+
+app.get('/api/v1/electricians',getElectrician);
 
 const PORT = process.env.PORT || 8080;
 
