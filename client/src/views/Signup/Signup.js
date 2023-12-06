@@ -44,20 +44,25 @@ function Signup() {
 
 
   return (
-    <div>
-      <h1>signup</h1>
-      <input type="text" placeholder="Name" value={name} onChange={(e) => { setName(e.target.value) }} className="font" />
-      <input type="email" placeholder="Email" value={email} onChange={(e) => { setEmail(e.target.value) }} className="font" />
-      <input type="password" placeholder="Password" value={password} onChange={(e) => { setPassword(e.target.value) }} className="font" />
-      <input type="text" placeholder="Address" value={address} onChange={(e) => { setAddress(e.target.value) }} className="font" />
-      <div>
-        <p className="font">male</p>
-        <input type="radio" name="gender" onChange={(e) => { setGender(e.target.value) }} value='male' checked='male' />
-        <p className="font">female</p>
-        <input type="radio" name="gender" onChange={(e) => { setGender(e.target.value) }} value='female' />
+    <div className="signup-container">
+      <h1 className="text-center-signup">Signup</h1>
+      <h3 className="text-center-signup heading">Create a free account with your email .</h3>
+      <div className="input-container-signup">
+        <input type="text" placeholder="Name" value={name} onChange={(e) => { setName(e.target.value) }} className="font input-signup" />
+        <input type="email" placeholder="Email" value={email} onChange={(e) => { setEmail(e.target.value) }} className="font input-signup" />
+        <input type="password" placeholder="Password" value={password} onChange={(e) => { setPassword(e.target.value) }} className="font input-signup" />
+        <input type="text" placeholder="Address" value={address} onChange={(e) => { setAddress(e.target.value) }} className="font input-signup" />
+
+      </div>
+      <div className="radio-container">
+        <p className="font " ><span className="radio-button">male</span>
+        <input type="radio" name="gender" onChange={(e) => { setGender(e.target.value) }} value='male' checked='male' />    </p>
+        <p className="font"><span className="radio-button">female</span>
+        <input type="radio" name="gender" onChange={(e) => { setGender(e.target.value) }} value='female' /></p>
       </div>
 
-      <button type="button" onClick={signupButton}>Signup</button>
+      <button type="button" className="button-signup" onClick={signupButton}>Signup</button>
+      <p className="description-con">Have an account ? <span className="signup-log-con">Log in</span></p>
     </div>
   );
 }

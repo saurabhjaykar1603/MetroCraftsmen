@@ -25,12 +25,15 @@ function Login() {
     }
   }
   return (
-    <div>
-      <h1>Login</h1>
+    <div className='login-container'>
+      <h1 className='text-center-login'>Login</h1>
 
-      <input type='email' value={email} onChange={(e) => { setEmail(e.target.value) }} placeholder='Email' />
-      <input type='password' value={password} onChange={(e) => { setPassword(e.target.value) }} placeholder='Password' />
-      <button type='button' onClick={loginButton}>Login</button>
+      <div className='input-container-login'>
+        <input className='input-login font' type='email' value={email} onChange={(e) => { setEmail(e.target.value) }} placeholder='Email' />
+        <input className='input-login font' type='password' value={password} onChange={(e) => { setPassword(e.target.value) }} placeholder='Password' />
+        <button className='button-login' type='button' onClick={loginButton}>Login</button>
+        <p className="description-con-login">Have an account ? <span className="login-log-con">Log in</span></p>
+      </div>
 
     </div>
   )
