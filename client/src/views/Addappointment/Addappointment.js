@@ -1,11 +1,41 @@
 import React, { useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import addPng from "./Construction worker-amico.png";
+import axios from "axios";
+import showToast from "crunchy-toast"
 function Addappointment() {
   const [userLocation, setUserLocation] = useState("pune");
   const [serviceProvider, setServiceProvider] = useState("el");
   const [serviceProviderContact, setServiceProviderContact] = useState("");
   const [appointmentDate, setAppointmentDate] = useState("");
+
+  const PostAppointMent = async () => {
+    if (!userLocation) {
+      showToast("User Locationunt is required", "alert", 4000);
+      return;
+    }
+    if (!serviceProvider) {
+      showToast("Service Provider Type is required", "alert", 4000);
+      return;
+    }
+    if (!serviceProviderContact) {
+      showToast("Service Provider Contact is required", "alert", 4000);
+      return;
+    }
+    if (!appointmentDate) {
+      showToast("Appointment Date is required", "alert", 4000);
+      return;
+    }
+    const user = JSON.parse(localStorage.getItem("user" || "{}"));
+    const response = await axios.post(`api/v1/appointments`, {
+      user: user._id,
+      userLocation,
+      serviceProvider,
+      serviceProviderContact,
+      appointmentDate,  
+    });
+    console.log(response?.data);
+  };
 
   return (
     <>
@@ -44,9 +74,9 @@ function Addappointment() {
             </div>
           </div>
           <div class="col-md-6 right ">
-            <div class="input-box mt-5">
-              <header className="my-3 fs-4">
-              ⦿ User Location{" "}
+            <div class="input-box mt-2">
+              <header className="mb-3 fs-4">
+                ⦿ User Location{" "}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"
@@ -157,7 +187,7 @@ function Addappointment() {
             </div>
 
             <header className="my-4 fs-4">
-            ⦿ Set a Date {" "}  &nbsp;
+              ⦿ Set a Date &nbsp;
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
@@ -184,7 +214,7 @@ function Addappointment() {
             </div>
             <div className=" w-75 my-4">
               <label htmlFor="selectOption " className="fs-4">
-              ⦿ Choose a one Contact Number {" "} &nbsp;  
+                ⦿ Choose a one Contact Number &nbsp;
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="18"
@@ -211,8 +241,12 @@ function Addappointment() {
                 <option value="+91 4567895467">+91 4567895467</option>
               </select>
             </div>
+            <button className="btn btn-dark" type="button" onClick={PostAppointMent}>
+              Add Appoinment
+            </button>
           </div>
-          <div></div>
+          <div>
+          </div>
         </div>
       </div>
     </>
