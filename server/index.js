@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 
 
-import {postAppoinments,getAppointmentById} from "./controllers/Appointment.js";
+import {postAppoinments,getAppointmentById,deletAppointmentById} from "./controllers/Appointment.js";
 import {postCarpenter,getCarpenter} from "./controllers/Carpenter.js";
 import {postElectrician,getElectrician} from "./controllers/Electrician.js";
 import {postPlumber,getPlumber} from "./controllers/Plumber.js";
@@ -35,7 +35,11 @@ app.post('/api/v1/appointments', postAppoinments);
 
 // GET AppointmentByID API
 
-app.get('/api/v1/appointments/:id',getAppointmentById)
+app.get('/api/v1/appointments/:id',getAppointmentById);
+
+// DELETE AppointmentById API
+
+app.delete('/api/v1/appoinments/:id',deletAppointmentById);
 
 // POST carpenter API
 app.post('/api/v1/carpenters',postCarpenter);

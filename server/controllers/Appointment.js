@@ -50,5 +50,22 @@ const getAppointmentById = async (req, res) => {
     }
 }; 
 
+const  deletAppointmentById = async (req, res) => {
+    const {id} =req.params;
+    try{
+        const deletAppointment = await Appointment.deleteOne({_id:id});
+        res.json({
+            success:true,
+            data:deletAppointment,
+            message:"Delet appointment successfully"
+        });
+    }
+    catch(err){
+        res.json({
+            success:false,
+        message:err.message
+        });
+    }
+}
 
-export { postAppoinments, getAppointmentById };
+export { postAppoinments, getAppointmentById,deletAppointmentById };
