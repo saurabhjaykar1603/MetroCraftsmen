@@ -1,14 +1,14 @@
 import React from 'react'
-import "./About.css"
+import "./Carpenter.css"
 import Navbar from '../../components/Navbar/Navbar'
 
-function About() {
+function Carpenter() {
   return (
     <div>
-      <Navbar />
-      <h1>About</h1>
+      <Navbar/>
+      <h1>Carpenter</h1>
     </div>
   )
 }
 
-export default About
+export default Carpenter
