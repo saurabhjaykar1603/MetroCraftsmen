@@ -15,6 +15,10 @@ const carpenterSchema = new Schema({
     img:{
         type:String,
         required:true
+    },
+    price:{
+        type:String,
+        required:true
     }
 })
 

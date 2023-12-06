@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 
 import {postAppoinments} from "./controllers/Appointment.js";
+import {postCarpenter,getCarpenter} from "./controllers/Carpenter.js";
 dotenv.config();
 
 const app = express();
@@ -26,6 +27,12 @@ app.get('/api/v1/healts', async (req,res)=> {
 
 // POST Appointment 
 app.post('/api/v1/appointments', postAppoinments);
+
+// POST carpenter API
+app.post('/api/v1/carpenters',postCarpenter);
+
+// GET carpenter API
+app.get('/api/v1/carpenters',getCarpenter);
 
 const PORT = process.env.PORT || 8080;
 
