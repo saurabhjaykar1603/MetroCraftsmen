@@ -1,6 +1,8 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+
+import {postAppoinments} from "./controllers/Appointment.js";
 dotenv.config();
 
 const app = express();
@@ -14,6 +16,16 @@ const connDB = async () => {
 };
 
 // api controllers goes bellow
+// health api
+app.get('/api/v1/healts', async (req,res)=> {
+  res.json({
+    success:true,
+    message:"Status okk"
+  });
+});
+
+// POST Appointment 
+app.post('/api/v1/appointments', postAppoinments);
 
 const PORT = process.env.PORT || 8080;
 
