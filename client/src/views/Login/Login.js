@@ -6,6 +6,15 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+
+  useEffect(() => {
+    const getloggedInUser = JSON.parse(localStorage.getItem("user" || "{}"));
+    if (getloggedInUser) {
+      alert("You have already logged in");
+      window.location.href = "/";
+    }
+  }, []);
+
   const loginButton = async () => {
     if (!email) {
       return alert('Email is required')
