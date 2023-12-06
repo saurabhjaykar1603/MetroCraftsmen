@@ -20,8 +20,9 @@ function Login() {
     });
 
     if (response?.data?.success) {
+      localStorage.setItem("user", JSON.stringify(response?.data?.data));
       alert(response?.data?.message);
-      window.location.href = '/'
+      window.location.href = '/addappointment'
     }
   }
   return (
