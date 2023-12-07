@@ -26,7 +26,10 @@ function Electrician() {
   return (
     <div>
       <Navbar />
-      <h1>Electricians</h1>
+      {/* <h1 className='heading'>Electricians</h1> */}
+      <div className='container'>
+        <img src='https://res.cloudinary.com/urbanclap/image/upload/t_high_res_category/w_873,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1701344190562-83cdb5.jpeg' alt='img' className='ele-image'/>
+      </div>
       <div className='ele-container'>
         {
           electricians?.map((Electrician, index) => {

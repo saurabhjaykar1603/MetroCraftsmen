@@ -1,5 +1,6 @@
 import React from 'react';
 import './Card.css';
+import { Link } from 'react-router-dom';
 
 function Card({name, contact, description, price, img}){
     return(
@@ -14,8 +15,11 @@ function Card({name, contact, description, price, img}){
             <p className='card-description'>{description}</p>
             <p className='card-contact'> Contact No :-{contact}</p>
             <p className='card-price'> Charges :- ₹ {price} /-</p>
+           <Link to="/addappointment"> <button className='appoinment-btn'>Get Appointment</button></Link>
             </div>
+            
         </div>
+       
        
         </>
     )

@@ -35,5 +35,13 @@
 
 .card-price {
     font-weight: bold;
-    color: #009900;
+    color:  #0000ff;
+}
+.appoinment-btn{
+    background-color: black;
+    color: #ffff;
+    padding: 5px 20px;
+    border: none;
+   border-radius: 18px;
+
 }

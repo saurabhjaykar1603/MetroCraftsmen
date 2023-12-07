@@ -3,3 +3,10 @@
     justify-content: space-around;
     flex-wrap: wrap;
 }
+.ele-image{
+    width: 100%;
+   object-fit: contain;
+}
+.heading{
+    text-align: center;
+}
