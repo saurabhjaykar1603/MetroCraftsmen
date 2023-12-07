@@ -1,0 +1,39 @@
+.ele-card-cont {
+    /* border: 1px solid#ccc; */
+    width: 500px;
+    display: flex;
+    margin: 20px 30px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    
+}
+
+.card-imge {
+    height: 180px;
+    padding: 10px;
+    margin: 10px 5px;
+}
+
+.discription-cont {
+    margin: 10px;
+}
+
+.card-name {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 550;
+}
+
+.card-description {
+    font-weight: 500;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.card-contact {
+    font-weight: 600;
+
+}
+
+.card-price {
+    font-weight: bold;
+    color: #009900;
+}
