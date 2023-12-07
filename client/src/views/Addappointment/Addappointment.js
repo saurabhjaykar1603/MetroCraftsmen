@@ -35,7 +35,10 @@ function Addappointment() {
       serviceProviderContact,
       appointmentDate,
     });
-    console.log(response?.data);
+    if(response?.data.success){
+      alert("appointment added successfully")
+      window.location.href="/myappointment"
+    }
   };
 
   useEffect(() => {
