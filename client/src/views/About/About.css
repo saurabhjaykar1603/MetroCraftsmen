@@ -1,0 +1,79 @@
+.about-container-wonner{
+    box-shadow: 0 0 5px 1px;
+    border-radius: 5px;
+    height: fit-content;
+    width:fit-content;
+    display: flex ;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.img-container{
+    margin: 5px;
+}
+.fist-con{
+    margin-left: 150px;
+    margin-top: 120px;
+    margin-bottom: 100px;
+}
+.second{
+    margin-left: 650px;
+    margin-top: 120px;
+    margin-bottom: 100px;
+}
+.information-container{
+    padding: 10px;
+    margin: 5px; 
+    width: fit-content;  
+}
+
+.img-about{
+    height: 250px;
+    border-radius: 5px ;
+}
+.about-paraghrap{
+    font-size: 20px;
+}
+.about-span-con{
+    font-weight: 700;
+}
+
+@media screen and (max-width:768px){
+   
+    .about-container-wonner{
+        box-shadow: 0 0 5px 1px;
+        border-radius: 5px;
+        height: fit-content;
+        width:300px;
+        flex-wrap: wrap;
+        padding: 5px;
+    } 
+    .img-container{
+        margin: 5px ;
+    }
+    .fist-con{
+        margin-left:auto;
+        margin-right: auto;
+    }
+    .second{
+        margin-left:auto;
+        margin-right: auto;
+    }
+    .information-container{
+        padding: 5px;
+        margin: 5px; 
+        width: fit-content;  
+    }
+    .img-about{
+        height: 150px;
+        border-radius: 5px ;
+        margin: 2px auto;
+        display: block;
+    }
+    .about-paraghrap{
+        font-size: 15px;
+    }
+    .about-span-con{
+        font-weight: 700;
+    }
+    
+}
