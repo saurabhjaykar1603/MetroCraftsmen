@@ -7,6 +7,7 @@ import ElectrictyImg from "./images/electrician.png";
 import PlumberImg from "./images/plumber.png";
 import CarpenterImg from "./images/carpenter.png";
 import { Link } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
 
 function Home() {
   return (
@@ -71,6 +72,9 @@ function Home() {
             <img src={homeElImg} alt="" className=" img-element" />
           </div>
         </div>
+      </div>
+      <div>
+        <Footer/>
       </div>
     </>
   );

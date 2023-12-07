@@ -39,8 +39,7 @@ font-size: 20px;
     font-size: 20px;
     margin: 10px auto;
     display: block;
-    background-color: red !important;
-    border: 1px solid red;
+    background-color: #262626 ;
     color: #fff;
 }
 .button-signup:hover{
@@ -89,8 +88,7 @@ font-size: 20px;
             font-size: 18px;
             margin: 10px auto;
             display: block;
-            background-color: red !important;
-            border: 1px solid red;
+            background-color:#262626;
             color: #fff;
         }
   }
