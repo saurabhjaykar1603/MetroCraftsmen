@@ -4,3 +4,8 @@
 flex-wrap: wrap;
 
 }
+.cra-img{
+    width: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
