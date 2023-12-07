@@ -39,6 +39,7 @@ function About() {
           <div className='img-container'>
             <img src={DattaImg} className='img-about' />
           </div>
+
           <div className='information-container '>
             <p className='about-paraghrap'><span className='about-span-con'>Name  :-</span> Tupe Datta</p>
             <p className='about-paraghrap'><span className='about-span-con'>Email :-</span>dattatupe77@gmail.com</p>
@@ -60,6 +61,7 @@ function About() {
             <p className='about-paraghrap'><span className='about-span-con'>PeerList :-</span> https://peerlist.io/dattatraytupe</p>
           </div>
         </div>
+
       </div>
       <h1>About</h1>
       <Footer />

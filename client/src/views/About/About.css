@@ -4,6 +4,7 @@
     height: fit-content;
     width:fit-content;
     display: flex ;
+    flex-wrap: wrap;
     justify-content: center;
 }
 .img-container{
@@ -37,26 +38,25 @@
 }
 
 @media screen and (max-width:768px){
+   
     .about-container-wonner{
         box-shadow: 0 0 5px 1px;
         border-radius: 5px;
         height: fit-content;
         width:300px;
         flex-wrap: wrap;
-        display: block;
-        margin: 10px auto;
         padding: 5px;
     } 
     .img-container{
         margin: 5px ;
     }
     .fist-con{
-        margin-left:20px;
-        margin-top: 60px;
+        margin-left:auto;
+        margin-right: auto;
     }
     .second{
-        margin-left:20px;
-        margin-top: 60px;
+        margin-left:auto;
+        margin-right: auto;
     }
     .information-container{
         padding: 5px;
