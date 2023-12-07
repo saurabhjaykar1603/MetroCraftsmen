@@ -1,0 +1,38 @@
+.about-container-wonner{
+    box-shadow: 0 0 5px 1px;
+    border-radius: 5px;
+    height: fit-content;
+    width:fit-content;
+    display: flex ;
+    justify-content: center;
+}
+.img-container{
+    margin: 5px;
+}
+.fist-con{
+    margin-left: 150px;
+    margin-top: 120px;
+    margin-bottom: 100px;
+}
+.second{
+    margin-left: 650px;
+    margin-top: 120px;
+    margin-bottom: 100px;
+}
+.information-container{
+    padding: 10px;
+    margin: 5px; 
+    width: fit-content;  
+}
+
+.img-about{
+    height: 250px;
+    border-radius: 5px ;
+}
+.about-paraghrap{
+    font-size: 20px;
+}
+.about-span-con{
+    font-weight: 700;
+}
+
