@@ -1,0 +1,27 @@
+.img-element {
+  max-width: 500px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+  filter: drop-shadow(20px 10px 4px #80b3ff);
+  margin: 10px auto !important;
+}
+
+
+.small-png {
+  height: 90px !important;
+}
+
+@media screen and (max-width: 600px) {
+  .img-element {
+    max-width: 300px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .small-png {
+    height: 50px !important;
+  }
+  .text-element {
+    margin-top : 0px !important;
+  }
+}
