@@ -1,13 +1,18 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import path from "path";
+const __dirname = path.resolve();
 
-
-import {postAppoinments,getAppointmentById,deletAppointmentById} from "./controllers/Appointment.js";
-import {postCarpenter,getCarpenter} from "./controllers/Carpenter.js";
-import {postElectrician,getElectrician} from "./controllers/Electrician.js";
-import {postPlumber,getPlumber} from "./controllers/Plumber.js";
-import {apiUserSignup , apiUserLogin} from './controllers/user.js';
+import {
+  postAppoinments,
+  getAppointmentById,
+  deletAppointmentById,
+} from "./controllers/Appointment.js";
+import { postCarpenter, getCarpenter } from "./controllers/Carpenter.js";
+import { postElectrician, getElectrician } from "./controllers/Electrician.js";
+import { postPlumber, getPlumber } from "./controllers/Plumber.js";
+import { apiUserSignup, apiUserLogin } from "./controllers/user.js";
 
 dotenv.config();
 
@@ -23,53 +28,59 @@ const connDB = async () => {
 
 // api controllers goes bellow
 // health api
-app.get('/api/v1/healts', async (req,res)=> {
+app.get("/api/v1/healts", async (req, res) => {
   res.json({
-    success:true,
-    message:"Status okk"
+    success: true,
+    message: "Status okk",
   });
 });
 
-// POST Appointment 
-app.post('/api/v1/appointments', postAppoinments);
+// POST Appointment
+app.post("/api/v1/appointments", postAppoinments);
 
 // GET AppointmentByID API
 
-app.get('/api/v1/appointments/:id',getAppointmentById);
+app.get("/api/v1/appointments/:id", getAppointmentById);
 
 // DELETE AppointmentById API
 
-app.delete('/api/v1/appoinments/:id',deletAppointmentById);
+app.delete("/api/v1/appoinments/:id", deletAppointmentById);
 
 // POST carpenter API
-app.post('/api/v1/carpenters',postCarpenter);
+app.post("/api/v1/carpenters", postCarpenter);
 
 // GET carpenter API
-app.get('/api/v1/carpenters',getCarpenter);
+app.get("/api/v1/carpenters", getCarpenter);
 
 // POST electrician API
 
-app.post('/api/v1/electricians',postElectrician);
+app.post("/api/v1/electricians", postElectrician);
 
 // GET  electrician API
 
-app.get('/api/v1/electricians',getElectrician);
+app.get("/api/v1/electricians", getElectrician);
 
 // POST plumber API
 
-app.post('/api/v1/plumbers',postPlumber);
+app.post("/api/v1/plumbers", postPlumber);
 
 // GET plumber API
-app.get('/api/v1/plumbers',getPlumber);
+app.get("/api/v1/plumbers", getPlumber);
 
 //-------Api Signup ----------
-app.post('/api/signup',apiUserSignup);
+app.post("/api/signup", apiUserSignup);
 
 //---------Api Login ---------
-app.post('/api/login', apiUserLogin);
+app.post("/api/login", apiUserLogin);
 
 const PORT = process.env.PORT || 5000;
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "..", "client", "build")));
 
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "client", "build", "index.html"));
+  });
+}
 app.listen(PORT, () => {
   console.log(`server listening on ${PORT}`);
   connDB();
