@@ -1,16 +1,17 @@
 .ele-card-cont {
     /* border: 1px solid#ccc; */
     width: 500px;
+    height: 270px;
     display: flex;
     margin: 20px 30px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    
+    position: relative;
 }
 
 .card-imge {
     height: 180px;
     padding: 10px;
-    margin: 10px 5px;
+    margin: 20px 5px;
 }
 
 .discription-cont {
@@ -43,5 +44,8 @@
     padding: 5px 20px;
     border: none;
    border-radius: 18px;
+   position: absolute;
+   bottom: 10px;
+   /* right: 2px; */
 
 }
