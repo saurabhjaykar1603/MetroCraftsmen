@@ -1,0 +1,13 @@
+.ele-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.ele-image{
+    width: 100%;
+   object-fit: contain;
+   border-radius: 10px;
+}
+.heading{
+    text-align: center;
+}
