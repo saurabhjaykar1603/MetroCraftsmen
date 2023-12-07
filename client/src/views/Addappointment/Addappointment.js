@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import addPng from "./Construction worker-amico.png";
 import axios from "axios";
-import showToast from "crunchy-toast"
+import showToast from "crunchy-toast";
 function Addappointment() {
   const [user, setUser] = useState({});
   const [userLocation, setUserLocation] = useState("pune");
@@ -10,16 +10,6 @@ function Addappointment() {
   const [serviceProviderContact, setServiceProviderContact] = useState("");
   const [appointmentDate, setAppointmentDate] = useState("");
 
-  useEffect(() => {
-    const storageUser = JSON.parse(localStorage.getItem("user") || '{}');
-   if(storageUser?.email){
-    setUser(storageUser);
-   }else{
-    alert("You are not logged in!");
-    window.location.href = "/login";
-   }
- 
-}, [])
   const PostAppointMent = async () => {
     if (!userLocation) {
       showToast("User Locationunt is required", "alert", 4000);
@@ -43,10 +33,20 @@ function Addappointment() {
       userLocation,
       serviceProvider,
       serviceProviderContact,
-      appointmentDate,  
+      appointmentDate,
     });
     console.log(response?.data);
   };
+
+  useEffect(() => {
+    const storageUser = JSON.parse(localStorage.getItem("user") || "{}");
+    if (storageUser?.email) {
+      setUser(storageUser);
+    } else {
+      alert("You are not logged in!");
+      window.location.href = "/login";
+    }
+  }, []);
 
   return (
     <>
@@ -85,8 +85,6 @@ function Addappointment() {
             </div>
           </div>
           <div class="col-md-6 right ">
-            <div class="input-box mt-5">
-              <header className="my-3 fs-4">
             <div class="input-box mt-2">
               <header className="mb-3 fs-4">
                 ⦿ User Location{" "}
@@ -200,7 +198,6 @@ function Addappointment() {
             </div>
 
             <header className="my-4 fs-4">
-              ⦿ Set a Date {" "}  &nbsp;
               ⦿ Set a Date &nbsp;
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -228,9 +225,6 @@ function Addappointment() {
             </div>
             <div className=" w-75 my-4">
               <label htmlFor="selectOption " className="fs-4">
-
-                ⦿ Choose a one Contact Number {" "} &nbsp;
-
                 ⦿ Choose a one Contact Number &nbsp;
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -258,12 +252,15 @@ function Addappointment() {
                 <option value="+91 4567895467">+91 4567895467</option>
               </select>
             </div>
-            <button className="btn btn-dark" type="button" onClick={PostAppointMent}>
+            <button
+              className="btn btn-dark"
+              type="button"
+              onClick={PostAppointMent}
+            >
               Add Appoinment
             </button>
           </div>
-          <div>
-          </div>
+          <div></div>
         </div>
       </div>
     </>
