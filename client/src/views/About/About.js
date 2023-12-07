@@ -14,14 +14,14 @@ function About() {
       <div>
         <div className='about-container-wonner fist-con'>
           <div className='img-container'>
-            <img src={} className='img-about' />
+            <img src={Aarti} className='img-about' />
           </div>
           <div className='information-container '>
-            <p className='about-paraghrap'><span className='about-span-con'>Name :-</span> </p>
-            <p className='about-paraghrap'><span className='about-span-con'>Email :-</span></p>
-            <p className='about-paraghrap'><span className='about-span-con'>GitHub :-</span></p>
-            <p className='about-paraghrap'><span className='about-span-con'>Linkdin :-</span></p>
-            <p className='about-paraghrap'><span className='about-span-con'>PeerList :-</span> </p>
+            <p className='about-paraghrap'><span className='about-span-con'>Name :-</span> Medhe Aarti</p>
+            <p className='about-paraghrap'><span className='about-span-con'>Email :-</span>aartimedhe16601@gmail.com</p>
+            <p className='about-paraghrap'><span className='about-span-con'>GitHub :-</span> https://github.com/aaru-01</p>
+            <p className='about-paraghrap'><span className='about-span-con'>Linkdin :-</span> https://www.linkedin.com/in/aartimedhe/</p>
+            <p className='about-paraghrap'><span className='about-span-con'>PeerList :-</span> https://peerlist.io/aartimedhe</p>
           </div>
         </div>
 
