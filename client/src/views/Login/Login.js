@@ -10,13 +10,21 @@ function Login() {
   const [password, setPassword] = useState('');
 
 
+  useEffect(() => {
+    const getloggedInUser = JSON.parse(localStorage.getItem("user" || "{}"));
+    if (getloggedInUser) {
+      alert("You have already logged in");
+      window.location.href = "/";
+    }
+  }, []);
+
   const loginButton = async () => {
-    // if (!email) {
-    //   return alert('Email is required')
-    // }
-    // if (!password) {
-    //   return alert('Password is required')
-    // }
+    if (!email) {
+      return alert('Email is required')
+    }
+    if (!password) {
+      return alert('Password is required')
+    }
 
     const response = await axios.post('/api/login', {
       email,
@@ -28,6 +36,9 @@ function Login() {
     if (response?.data?.success) {
       localStorage.setItem("user", JSON.stringify(response?.data?.data));
       window.location.href = '/';
+
+      alert(response?.data?.message);
+      window.location.href = '/addappointment'
     }
   }
 
