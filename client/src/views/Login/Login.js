@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import "./Login.css"
+import Navbar from "./../../components/Navbar/Navbar.js"
+import { Link } from 'react-router-dom';
+
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -28,24 +31,40 @@ function Login() {
       password
     });
 
+    alert(response?.data?.message);
+
     if (response?.data?.success) {
       localStorage.setItem("user", JSON.stringify(response?.data?.data));
+      window.location.href = '/';
+
       alert(response?.data?.message);
       window.location.href = '/addappointment'
     }
   }
+
+  useEffect(() => {
+    const storageUser = JSON.parse(localStorage.getItem("user") || "{}");
+    if (storageUser?.email) {
+      alert("You are already logged in!");
+      window.location.href = "/";
+    }
+  }, [])
+
   return (
-    <div className='login-container'>
-      <h1 className='text-center-login'>Login</h1>
+    <>
+      <Navbar />
+      <div className='login-container'>
+        <h1 className='text-center-login'>Login</h1>
 
-      <div className='input-container-login'>
-        <input className='input-login font' type='email' value={email} onChange={(e) => { setEmail(e.target.value) }} placeholder='Email' />
-        <input className='input-login font' type='password' value={password} onChange={(e) => { setPassword(e.target.value) }} placeholder='Password' />
-        <button className='button-login' type='button' onClick={loginButton}>Login</button>
-        <p className="description-con-login">Have an account ? <span className="login-log-con">Log in</span></p>
+        <div className='input-container-login'>
+          <input className='input-login font' type='email' value={email} onChange={(e) => { setEmail(e.target.value) }} placeholder='Email' />
+          <input className='input-login font' type='password' value={password} onChange={(e) => { setPassword(e.target.value) }} placeholder='Password' />
+          <button className='button-login' type='button' onClick={loginButton}>Login</button>
+          <Link to="/signup" className="description-con-login">Create a new account ?</Link>
+        </div>
+
       </div>
-
-    </div>
+    </>
   )
 }
 

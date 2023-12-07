@@ -1,4 +1,10 @@
-
+.navbar-logout{
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    margin: 0 10px;
+    cursor: pointer;
+}
 @media screen and (max-width:768px){
     
 }
