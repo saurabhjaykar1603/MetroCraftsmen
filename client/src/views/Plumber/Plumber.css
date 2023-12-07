@@ -1,0 +1,10 @@
+.plumber-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.plumber-image{
+    width: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}

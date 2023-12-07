@@ -3,6 +3,7 @@ import "./Electrician.css"
 import axios from 'axios';
 import Card from '../../components/Card/Card';
 import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
 
 function Electrician() {
   const [electricians, setElectrician] = useState([]);
@@ -49,6 +50,7 @@ function Electrician() {
           })
         }
       </div>
+      <Footer/>
     </div>
   )
 }
