@@ -30,11 +30,11 @@ function About() {
             <img src={Saurabh} className='img-about' />
           </div>
           <div className='information-container'>
-            <p className='about-paraghrap'><span className='about-span-con'>Name :-</span></p>
-            <p className='about-paraghrap'><span className='about-span-con'>Email :-</span></p>
-            <p className='about-paraghrap'><span className='about-span-con'>GitHub :-</span></p>
-            <p className='about-paraghrap'><span className='about-span-con'>Linkdin :-</span></p>
-            <p className='about-paraghrap'><span className='about-span-con'>PeerList :-</span></p>
+            <p className='about-paraghrap'><span className='about-span-con'>Name :-</span> Saurabh Jaykar</p>
+            <p className='about-paraghrap'><span className='about-span-con'>Email :-</span>jaykarsaurabh97@gmail.com</p>
+            <p className='about-paraghrap'><span className='about-span-con'>GitHub :-</span> https://github.com/saurabhjaykar1603</p>
+            <p className='about-paraghrap'><span className='about-span-con'>Linkdin :-</span> https://www.linkedin.com/saurabh-jaykar</p>
+            <p className='about-paraghrap'><span className='about-span-con'>PeerList :-</span>https://peerlist.io/saurabhjaykar16</p>
           </div>
         </div>
 
@@ -54,7 +54,7 @@ function About() {
 
         <div className='about-container-wonner second'>
           <div className='img-container'>
-            <img src={} className='img-about' />
+            <img src={DattaImg} className='img-about' />
           </div>
           <div className='information-container'>
             <p className='about-paraghrap'><span className='about-span-con'>Name  :-</span> Tupe Datta</p>
