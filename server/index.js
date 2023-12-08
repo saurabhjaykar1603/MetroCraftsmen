@@ -7,7 +7,8 @@ import {postCarpenter,getCarpenter} from "./controllers/Carpenter.js";
 import {postElectrician,getElectrician} from "./controllers/Electrician.js";
 import {postPlumber,getPlumber} from "./controllers/Plumber.js";
 import {apiUserSignup , apiUserLogin} from './controllers/user.js';
-import {postApiContacts} from './controllers/Contacts.js'
+import {postApiContacts, getApiContacts} from './controllers/Contacts.js'
+import Contact from "./models/Contacts.js";
 
 dotenv.config();
 
@@ -62,14 +63,17 @@ app.post('/api/v1/plumbers',postPlumber);
 // GET plumber API
 app.get('/api/v1/plumbers',getPlumber);
 
-//-------Api Signup ----------
+//-------API Signup ----------
 app.post('/api/signup',apiUserSignup);
 
-//---------Api Login ---------
+//---------API Login ---------
 app.post('/api/login', apiUserLogin);
 
-//--------Api Contact ---------
-app.post('/api/contact', postApiContacts);
+//--------API Contacts ---------
+app.post('/api/contacts', postApiContacts);
+
+//-------Get API id in Contacts -------
+app.get('/api/contacts/:id' , getApiContacts);
 
 const PORT = process.env.PORT || 5000;
 
