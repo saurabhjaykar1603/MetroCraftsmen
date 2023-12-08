@@ -3,6 +3,8 @@ import Navbar from "../../components/Navbar/Navbar";
 import addPng from "./Construction worker-amico.png";
 import axios from "axios";
 import showToast from "crunchy-toast";
+import Footer from '../../components/Footer/Footer';
+
 function Addappointment() {
   const [user, setUser] = useState({});
   const [userLocation, setUserLocation] = useState("pune");
@@ -265,6 +267,9 @@ function Addappointment() {
           </div>
           <div></div>
         </div>
+      </div>
+      <div className="mt-3">
+        <Footer/>
       </div>
     </>
   );
