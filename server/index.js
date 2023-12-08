@@ -12,15 +12,15 @@ import {postApiContacts, getApiContacts} from './controllers/Contacts.js'
 import path from "path";
 const __dirname = path.resolve();
 
-import {
-  postAppoinments,
-  getAppointmentById,
-  deletAppointmentById,
-} from "./controllers/Appointment.js";
-import { postCarpenter, getCarpenter } from "./controllers/Carpenter.js";
-import { postElectrician, getElectrician } from "./controllers/Electrician.js";
-import { postPlumber, getPlumber } from "./controllers/Plumber.js";
-import { apiUserSignup, apiUserLogin } from "./controllers/user.js";
+// import {
+//   postAppoinments,
+//   getAppointmentById,
+//   deletAppointmentById,
+// } from "./controllers/Appointment.js";
+// import { postCarpenter, getCarpenter } from "./controllers/Carpenter.js";
+// import { postElectrician, getElectrician } from "./controllers/Electrician.js";
+// import { postPlumber, getPlumber } from "./controllers/Plumber.js";
+// import { apiUserSignup, apiUserLogin } from "./controllers/user.js";
 
 dotenv.config();
 
@@ -88,7 +88,7 @@ app.post('/api/contacts', postApiContacts);
 //-------Get API id in Contacts -------
 app.get('/api/contacts/:id' , getApiContacts);
 
-const PORT = process.env.PORT || 5000;
+// const PORT = process.env.PORT || 5000;
 
 //-------Api Signup ----------
 app.post("/api/signup", apiUserSignup);
