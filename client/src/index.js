@@ -7,6 +7,7 @@ import Home from "./views/Home/Home.js";
 import About from "./views/About/About.js";
 import Login from "./views/Login/Login.js"
 import Signup from "./views/Signup/Signup.js"
+import Contact from "./views/Contact/Contact.js";
 import Addappointment from "./views/Addappointment/Addappointment.js"
 import Myappointment from "./views/Myappointment/Myappointment.js"
 
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
   {
     path: "/plumber",
     element: <Plumber />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
   },
   {
     path: "/login",
