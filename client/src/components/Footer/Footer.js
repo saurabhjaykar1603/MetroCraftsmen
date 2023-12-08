@@ -29,9 +29,9 @@ function Footer() {
                     </div>
                     <div >
                         <h2 className="font-size-footer-h-tag footer-con-link">Contact US 🙂</h2>
-                        <div><h1 className="font-size-h footer-con-link">Email : dattapatil@gmail.com  </h1></div>
-                        <div><h1 className="font-size-h footer-con-link">Name : Datta Tupe </h1></div>
-                        <div><h1 className="font-size-h footer-con-link">Mobile No : 9661626305 </h1></div>
+                        <div><h1 className="font-size-h footer-con-link">Email : Metro@gmail.com  </h1></div>
+                        <div><h1 className="font-size-h footer-con-link">Name :  Metro Crafts Men </h1></div>
+                        <div><h1 className="font-size-h footer-con-link">Teliphone No :  1-888-382-1333  </h1></div>
                     </div>
                 </div>
             </div>
