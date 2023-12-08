@@ -29,6 +29,16 @@ function Myappointment() {
     [appointments]
   );
 
+  useEffect(() => {
+    const storageUser = JSON.parse(localStorage.getItem("user") || "{}");
+    if (storageUser?.email) {
+      setUser(storageUser);
+    } else {
+      alert("You are not logged in!");
+      window.location.href = "/login";
+    }
+  }, []);
+
   return (
     <>
       <Navbar />
