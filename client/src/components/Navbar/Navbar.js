@@ -56,18 +56,21 @@ function Navbar() {
                                 </li>
 
                                 <li class="nav-item">
-                                    <Link to="/electrician" class="nav-link" href="#">
-                                        Electrician
-                                    </Link>
+                                    <div class="btn-group">
+                                        <button class="btn dropdown-toggle nav-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Services
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><Link to="/electrician" class="dropdown-item" >Electrician</Link></li>
+                                            <li><Link to="/plumber" class="dropdown-item" >Plumber</Link></li>
+                                            <li><Link to="/carpenter" class="dropdown-item" >Carpenter</Link></li>
+                                        </ul>
+                                    </div>
                                 </li>
+
                                 <li class="nav-item">
-                                    <Link to="/plumber" class="nav-link" href="#">
-                                        Plumber
-                                    </Link>
-                                </li>
-                                <li class="nav-item">
-                                    <Link to="/carpenter" class="nav-link" href="#">
-                                        Carpenter
+                                    <Link to="/contact" class="nav-link" href="#">
+                                       Contact
                                     </Link>
                                 </li>
                             </ul>
