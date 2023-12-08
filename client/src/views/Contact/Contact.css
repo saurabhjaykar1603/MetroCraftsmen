@@ -13,7 +13,7 @@
     /* border: 1px solid gray; */
     margin: 20px;
     padding: 40px;
-    margin-right: 60px;
+    margin-right: 90px;
     /* background-color: #f9f9f9; */
 }
 
@@ -64,4 +64,18 @@
     border: none;
     color: black;
     box-shadow: 1px 0px 2px 1px gray;
+}
+
+@media screen and (max-width:768px){
+    .contact-img {
+        width: 520px;
+        margin-top: 50px;
+    }
+    .contact-sub-container {
+        /* border: 1px solid gray; */
+        margin: 20px;
+        padding: 40px;
+        margin-right: 50px;
+        /* background-color: #f9f9f9; */
+    }
 }
