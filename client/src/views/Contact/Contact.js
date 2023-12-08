@@ -16,16 +16,16 @@ function Contact() {
 
     useEffect(() => {
         const storedUser = JSON.parse(localStorage.getItem("user" || "{}"));
-        if (storedUser.name) {
+        if (storedUser && storedUser.name) {
             setName(storedUser.name);
-        }
-        if (storedUser.email) {
+          }
+          if (storedUser && storedUser.email) {
             setEmail(storedUser.email);
-        }
-        if (storedUser.mobile) {
+          }
+          if (storedUser && storedUser.mobile) {
             setMobile(storedUser.mobile);
-        }
-    }, []);
+          }
+        }, []);
 
     const contact = async () => {
         if (!name) {
