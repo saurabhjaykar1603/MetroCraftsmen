@@ -1,6 +1,14 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+
+
+import {postAppoinments,getAppointmentById,deletAppointmentById} from "./controllers/Appointment.js";
+import {postCarpenter,getCarpenter} from "./controllers/Carpenter.js";
+import {postElectrician,getElectrician} from "./controllers/Electrician.js";
+import {postPlumber,getPlumber} from "./controllers/Plumber.js";
+import {apiUserSignup , apiUserLogin} from './controllers/user.js';
+import {postApiContacts, getApiContacts} from './controllers/Contacts.js'
 import path from "path";
 const __dirname = path.resolve();
 
@@ -66,6 +74,21 @@ app.post("/api/v1/plumbers", postPlumber);
 
 // GET plumber API
 app.get("/api/v1/plumbers", getPlumber);
+
+
+//-------API Signup ----------
+app.post('/api/signup',apiUserSignup);
+
+//---------API Login ---------
+app.post('/api/login', apiUserLogin);
+
+//--------API Contacts ---------
+app.post('/api/contacts', postApiContacts);
+
+//-------Get API id in Contacts -------
+app.get('/api/contacts/:id' , getApiContacts);
+
+const PORT = process.env.PORT || 5000;
 
 //-------Api Signup ----------
 app.post("/api/signup", apiUserSignup);
