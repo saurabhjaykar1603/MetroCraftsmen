@@ -2,12 +2,12 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 
-
 import {postAppoinments,getAppointmentById,deletAppointmentById} from "./controllers/Appointment.js";
 import {postCarpenter,getCarpenter} from "./controllers/Carpenter.js";
 import {postElectrician,getElectrician} from "./controllers/Electrician.js";
 import {postPlumber,getPlumber} from "./controllers/Plumber.js";
 import {apiUserSignup , apiUserLogin} from './controllers/user.js';
+import {postApiContacts} from './controllers/Contacts.js'
 
 dotenv.config();
 
@@ -67,6 +67,9 @@ app.post('/api/signup',apiUserSignup);
 
 //---------Api Login ---------
 app.post('/api/login', apiUserLogin);
+
+//--------Api Contact ---------
+app.post('/api/contact', postApiContacts);
 
 const PORT = process.env.PORT || 5000;
 
