@@ -8,7 +8,6 @@ import {postElectrician,getElectrician} from "./controllers/Electrician.js";
 import {postPlumber,getPlumber} from "./controllers/Plumber.js";
 import {apiUserSignup , apiUserLogin} from './controllers/user.js';
 import {postApiContacts, getApiContacts} from './controllers/Contacts.js'
-import Contact from "./models/Contacts.js";
 
 dotenv.config();
 
