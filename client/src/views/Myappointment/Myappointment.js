@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import axios from "axios";
 import "./Myappointment.css";
 import Footer from "../../components/Footer/Footer.js";
+import img1 from "./locator3.png"
 // import img1 from "./"
 
 function Myappointment() {
@@ -29,12 +30,22 @@ function Myappointment() {
     [appointments]
   );
 
+  useEffect(() => {
+    const storageUser = JSON.parse(localStorage.getItem("user") || "{}");
+    if (storageUser?.email) {
+      setUser(storageUser);
+    } else {
+      alert("You are not logged in!");
+      window.location.href = "/login";
+    }
+  }, []);
+
   return (
     <>
       <Navbar />
 
       <div>
-        <div>{/* <img src={img1}/> */}</div>
+
         <div className="my-appoinment-container">
           {appointments?.map((appointment, index) => {
             const {
@@ -49,27 +60,31 @@ function Myappointment() {
               el: "Electrician ",
               plb: " Plumber",
               crp: "Carpenter",
-            };
+            }
             return (
-              <div className="myappointment-card" key={index}>
+              
+            <div className="card-myappointment" key={index}>
                 <h2 className=" text-center info-apt">
                   Appointment Information⤵
                 </h2>
-                <h2 className="name"> Appoinment By {user.name}</h2>
-                <h3 className="text-center select-serivce">
+              
+                <h3 className="select-serivce">
+                  
                   {" "}
                   ✔ Selected Service is {SERVICE_PROVIDER[serviceProvider]}
                 </h3>
-                <h2 className="text-center location">
-                  ⦿ Location: {userLocation}{" "}
-                </h2>
+                <span className="text-center location">
+                  <img src={img1} className="img-locator"/>{userLocation}{" "}
+                </span>
 
-                <h2 className="text-center hr-cnt">
+                <h3 className="text-center hr-cnt">
                   Contact Here📞:
                   <span className=" cnt">{serviceProviderContact}</span>
-                </h2>
-                <h3 className="text-center date">Date:{appointmentDate}</h3>
-              </div>
+                </h3>
+                <h5 className="date">Date:{appointmentDate}</h5>
+
+                
+            </div>
             );
           })}
         </div>
