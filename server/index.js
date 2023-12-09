@@ -73,7 +73,7 @@ app.post("/api/signup", apiUserSignup);
 //---------Api Login ---------
 app.post("/api/login", apiUserLogin);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "..", "client", "build")));
 
