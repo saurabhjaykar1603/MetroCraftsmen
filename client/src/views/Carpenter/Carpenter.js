@@ -10,7 +10,7 @@ function Carpenter() {
 
   const loadCarpenter = async () => {
 try{
-  const response = await axios.get("/api/v1/carpenters");
+  const response = await axios.get("/api/v1/services/carpenter");
   setCarpenter(response?.data?.data);
 }
 catch(err){
@@ -32,15 +32,16 @@ catch(err){
   <div className='cra-container'>
     {
       carpenters?.map((carpenter,index) => {
-        const {name, contact, description, price, img} = carpenter;
+        const {name,serviceName, contact, speciality, price, img} = carpenter;
 
         return (
        <>
         <Card
         key={index}
         name={name}
+        serviceName={serviceName}
         contact={contact}
-        description={description}
+        speciality={speciality}
         price={price}
         img={img}
         />
