@@ -5,6 +5,11 @@ const ServiceNameSchema = new Schema({
     enum: ["electrician", "carpenter", "plumber"],
     required: true,
   },
+  name: {
+    type: "string",
+    required: true,
+
+  },
   contact: {
     type: String,
     required: true,
@@ -15,7 +20,6 @@ const ServiceNameSchema = new Schema({
   },
   img: {
     type: String,
-    required: true,
   },
   price: {
     type: String,
