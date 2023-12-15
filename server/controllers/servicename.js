@@ -25,6 +25,23 @@ const postServices = async (req, res) => {
   }
 };
 
+const getServicesByName = async (req, res) => {
+  const { serviceName } = req.params;
+  try {
+    const findServiceByName = await ServiceName.find({
+      serviceName: serviceName,
+    });
+    res.status(200).json({
+      success: true,
+      data: findServiceByName,
+      message: "Service successfully fetched by ServiceName", // Correcting "fetach" to "fetch"
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message,
+    });
+  }
+};
 
-
-export { postServices, getServicesByName };
+export { postServices,getServicesByName};
