@@ -10,7 +10,7 @@ function Electrician() {
 
   const loadElectrician = async () => {
     try {
-      const response = await axios.get("/api/v1/electricians");
+      const response = await axios.get("/api/v1/services/electrician");
       setElectrician(response?.data?.data);
     }
     catch (err) {
@@ -35,13 +35,14 @@ function Electrician() {
         {
           electricians?.map((Electrician, index) => {
 
-            const { name, contact, description, price, img } = Electrician;
+            const { name,serviceName, contact, speciality, price, img } = Electrician;
 
             return (<Card
               key={index}
               name={name}
+              serviceName={serviceName}
               contact={contact}
-              description={description}
+              speciality={speciality}
               price={price}
               img={img}
             />);
