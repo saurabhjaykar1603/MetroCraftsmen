@@ -75,9 +75,35 @@
     color: brown;
 }
 
-/* .background-img{
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu8Tp1gAJirAgvduiYv5SOGtD41_dp0F3IAQ&usqp=CAU");
-    background-repeat: no-repeat;
-    width: 100%;
-    object-fit: contain;
-} */
+@media screen and (max-width:768px){
+    .my-appoinment-container {
+        width: 700px;
+        height: 80vh;
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: 1px;
+        margin-left: -130px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    .my-appoinment-container::-webkit-scrollbar {
+        display: none;
+    }
+    .info-apt {
+      font-size: 20px;
+      margin-left: -90px;
+    }
+    .date {
+        position: absolute;
+        font-size: 15px;
+        bottom: 40px;
+        right: 5px;
+        color: brown;
+    }
+    .select-serivce {
+        /* color: blue; */
+        font-size: 15px;
+    }
+    
+    
+}
