@@ -10,7 +10,7 @@ function Plumber() {
 
   const loadPlumber = async () => {
     try {
-      const response = await axios.get("/api/v1/plumbers");
+      const response = await axios.get("/api/v1/services/plumber");
       setPlumber(response?.data?.data);
     }
     catch (err) {
@@ -33,13 +33,14 @@ function Plumber() {
      {
           plumbers?.map((plumber, index) => {
 
-            const { name, contact, description, price, img } = plumber;
+            const { name, serviceName,contact, speciality, price, img } = plumber;
 
             return (<Card
               key={index}
               name={name}
+              serviceName={serviceName}
               contact={contact}
-              description={description}
+              speciality={speciality}
               price={price}
               img={img}
             />);
