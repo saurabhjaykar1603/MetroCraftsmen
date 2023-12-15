@@ -9,6 +9,7 @@ import {postElectrician,getElectrician} from "./controllers/Electrician.js";
 import {postPlumber,getPlumber} from "./controllers/Plumber.js";
 import {apiUserSignup , apiUserLogin} from './controllers/user.js';
 import {postApiContacts, getApiContacts} from './controllers/Contacts.js'
+import {postServices} from "./controllers/servicename.js"
 import path from "path";
 const __dirname = path.resolve();
 
@@ -95,6 +96,13 @@ app.post("/api/signup", apiUserSignup);
 
 //---------Api Login ---------
 app.post("/api/login", apiUserLogin);
+
+//---------ServiceName () -------
+app.post("/api/v1/services/", postServices ) 
+
+
+
+
 
 const PORT = process.env.PORT || 8000;
 if (process.env.NODE_ENV === "production") {
